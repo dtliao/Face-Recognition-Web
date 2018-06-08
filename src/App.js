@@ -72,7 +72,7 @@ class App extends Component {
 
   onPictureSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('http://localhost:3000/imageUrl', {
+      fetch('https://radiant-river-39942.herokuapp.com/imageUrl', {
         method: 'post', 
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify({
@@ -82,7 +82,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://radiant-river-39942.herokuapp.com/image', {
             method: 'put', 
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify({
@@ -92,11 +92,12 @@ class App extends Component {
           .then(response => response.json())
           .then(count => {
               this.setState(Object.assign(this.state.user, { entries: count }))
-           })
+          })
           .catch(console.log)
-           }
-           this.displayFaceBox(this.calculateFaceLocation(response)).catch(err => console.log(err));
+        }
+        this.displayFaceBox(this.calculateFaceLocation(response));
       })
+      .catch(console.log);
   }
   onRouteChange = (route) => {
     if (route === 'signout') {
