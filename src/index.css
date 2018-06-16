@@ -4,12 +4,8 @@ body {
   font-family: "Courier New", Courier, monospace;
   background: linear-gradient(to left,#FFB612,#C75B12);
 }
-
 button {
 	cursor: pointer;
 }
 
 
- //background: linear-gradient(89deg, #536976 0%, #292e49  100%);
- //background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(145,132,100,1) 100%);
- 
